@@ -133,8 +133,18 @@ export default function Cart() {
               </tbody>
             </table>
           </div>
-          
+       
         </div>
+        <Link to='/payment'>
+          <div className="flex justify-center mb-4">
+            <button
+              type="submit"
+              className={`${isButtonHidden ? 'hidden' : ''} mt-7 text-white bg-[#134B70] hover:bg-[#16353c] focus:outline-none font-medium rounded-lg text-sm w-full sm:w-auto px-11 py-4 text-center`}
+            >
+              Pay
+            </button>
+          </div>
+          </Link>
       </div>
     </div>
   );
