@@ -48,9 +48,11 @@ export default function CartProvider({ children }) {
 
 
    function getUserCart(){
-    axios.get('https://ecommerce.routemisr.com/api/v1/cart',{
-      headers,
-    }).then((res)=>{
+    axios.get('https://ecommerce.routemisr.com/api/v1/cart', {
+      headers: {
+          token: localStorage.getItem('tkn')
+      }
+  }).then((res)=>{
 
       setnumOfCartItems(res.data.numOfCartItems)
       setAllProducts(res.data.data.products)
@@ -73,9 +75,11 @@ useEffect(()=>{
 function updateCount(productId ,  newCount){
   axios.put(`https://ecommerce.routemisr.com/api/v1/cart/${productId}`,{
        "count" : newCount,
-  }, {
-    headers
-  }).then((res)=>{
+  },  {
+    headers: {
+        token: localStorage.getItem('tkn')
+    }
+}).then((res)=>{
 
     setnumOfCartItems(res.data.numOfCartItems)
     setAllProducts(res.data.data.products)
@@ -94,9 +98,11 @@ function updateCount(productId ,  newCount){
 
 async function deleteProduct(productId){
 
-  return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}` , {
-     headers,
-   })
+  return axios.delete(`https://ecommerce.routemisr.com/api/v1/cart/${productId}` ,  {
+    headers: {
+        token: localStorage.getItem('tkn')
+    }
+})
    .then((res)=> {
 
      setnumOfCartItems(res.data.numOfCartItems)
@@ -115,9 +121,11 @@ async function deleteProduct(productId){
 
 async function clearCart(){
 
-  return axios.delete("https://ecommerce.routemisr.com/api/v1/cart" , {
-     headers,
-   })
+  return axios.delete("https://ecommerce.routemisr.com/api/v1/cart" ,  {
+    headers: {
+        token: localStorage.getItem('tkn')
+    }
+})
    .then((res)=> {
 
     setnumOfCartItems(0)

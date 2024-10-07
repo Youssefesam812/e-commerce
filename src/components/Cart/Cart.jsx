@@ -64,33 +64,21 @@ export default function Cart() {
             </h2>
           </div>
           <div className='flex justify-center items-center mt-4 md:mt-2'>
-  <div className='w-9/12 md:w-3/5 flex justify-center md:justify-end'>
-    {numOfCartItems > 0 ? (
-     <p className='mt-5 mr-5 text-white rounded-lg text-sm md:text-base'>
-     Your cart includes <span className='text-teal-500'>{numOfCartItems}</span> different items
-   </p>
-    ) : (
-      <div className='w-full text-center'>
-        <p className='mt-5 text-white rounded-lg text-sm md:text-base'>
-          Your cart includes <span className='text-teal-500'>0</span> different items
-        </p>
-      </div>
-    )}
-  </div>
-  {!isButtonHidden && (
-  <div className='flex justify-end w-3/12 md:w-2/5 md:mt-9 mt-7'>
-    <button
-      onClick={handleClearCart}
-      type="button"
-      className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm p-4 px-5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
-    >
-      Clear Cart
-    </button>
-  </div>
-  )}
-
-</div>
-
+            <div className='w-9/12 md:w-3/5 flex justify-center md:justify-end '>
+              <p className='text-center mt-5 bg-[#134B70] p-4 text-white rounded-lg text-sm md:text-base'>
+                Your cart includes <span className='text-teal-500'>{numOfCartItems}</span> different items
+              </p>
+            </div>
+            <div className='flex justify-end w-3/12 md:w-2/5 md:mt-9 mt-7'>
+              <button
+                onClick={handleClearCart}
+                type="button"
+                className="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm p-4 px-5 me-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900"
+              >
+                Clear Cart
+              </button>
+            </div>
+          </div>
 
 
          
